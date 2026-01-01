@@ -12,7 +12,7 @@ import TaskList from './components/TaskList'
 
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'https://dt-project-backend.onrender.com/api',
+  baseURL: import.meta.env.VITE_API_URL || 'https://dt-project-backend.onrender.com/api/',
   headers: {
     'Content-Type': 'application/json'
   }
