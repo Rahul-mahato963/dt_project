@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import axios from 'axios'  // ✅ Added Axios
+import axios from 'axios' 
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
@@ -10,9 +10,9 @@ import { Loader2, Edit3, Trash2, CheckCircle } from 'lucide-react'
 import TaskForm from './components/TaskForm'
 import TaskList from './components/TaskList'
 
-// Axios instance with base URL
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
+  baseURL: import.meta.env.VITE_API_URL || 'https://dt-project-backend.onrender.com',
   headers: {
     'Content-Type': 'application/json'
   }
@@ -30,7 +30,7 @@ function App() {
     try {
       setLoading(true)
       const { data } = await api.get('/tasks')
-      setTasks(data.data || data)  // Backend returns {success, data} or direct array
+      setTasks(data.data || data)  
     } catch (err) {
       console.error('Fetch error:', err)
     } finally {
@@ -79,7 +79,6 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto space-y-8">
-        {/* Header */}
         <div className="text-center space-y-4">
           <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 bg-clip-text text-transparent drop-shadow-lg">
             DT Task Manager
@@ -97,10 +96,9 @@ function App() {
           </div>
         </div>
 
-        {/* Add Task Form */}
         <TaskForm onAddTask={addTask} />
 
-        {/* Tasks List */}
+       
         <TaskList 
           tasks={tasks} 
           onUpdateTask={updateTask}
