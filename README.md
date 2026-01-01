@@ -85,7 +85,7 @@ All interns are trained across the complete DeepTech stack, regardless of specia
 - NodeBB
 - Express.js
 - React
-- JavaScript
+
 
 ### Live Link ###
 https://dt-project-production.onrender.com
