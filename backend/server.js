@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(
   cors({
-    origin:" https://dt-project-production.onrender.com",
+    origin:"https://dt-project-production.onrender.com",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
   })
