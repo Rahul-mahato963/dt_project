@@ -3,7 +3,6 @@ import Task from '../models/Tasks.js';
 
 const router = express.Router();
 
-// GET /api/tasks - Get all tasks
 router.get('/', async (req, res) => {
   try {
     const tasks = await Task.find().sort({ createdAt: -1 });
@@ -20,7 +19,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// POST /api/tasks - Create task
+
 router.post('/', async (req, res) => {
   try {
     const { title, description } = req.body;
@@ -47,7 +46,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// PUT /api/tasks/:id - Update task
+
 router.put('/:id', async (req, res) => {
   try {
     const { id } = req.params;
@@ -78,7 +77,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-// DELETE /api/tasks/:id - Delete task
+
 router.delete('/:id', async (req, res) => {
   try {
     const { id } = req.params;
