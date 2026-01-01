@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import swaggerUi from 'swagger-ui-express';
 import swaggerDocument from './swagger.json.js';
-import tasksRouter from './routes/tasks.js';
+import tasksRouter from './routes/Tasks.js';
 import dotenv from 'dotenv';
 
 dotenv.config();
